@@ -354,16 +354,6 @@ section.main {
   width: 90%;
   margin: 0 auto;
 }
-@media screen and (min-width: 48em) {
-  section.main {
-    width: 46rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  section.main {
-    width: 62rem;
-  }
-}
 .zetta-logo {
   background: url('../images/zetta-logo.png');
   background-image: url('../images/zetta-logo.svg'), none;
@@ -416,20 +406,6 @@ footer ul {
   margin: 0;
   padding: 0;
 }
-header {
-  width: 90%;
-  margin: 0 auto;
-}
-@media screen and (min-width: 48em) {
-  header {
-    width: 46rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  header {
-    width: 62rem;
-  }
-}
 /* links */
 a {
   color: #faa438;
@@ -458,32 +434,12 @@ a.home:hover {
   width: 90%;
   margin: 0 auto;
 }
-@media screen and (min-width: 48em) {
-  #hero header {
-    width: 46rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  #hero header {
-    width: 62rem;
-  }
-}
 #hero #cta {
   background-color: #4a5981;
 }
 #hero #cta .content {
   width: 90%;
   margin: 0 auto;
-}
-@media screen and (min-width: 48em) {
-  #hero #cta .content {
-    width: 46rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  #hero #cta .content {
-    width: 62rem;
-  }
 }
 #hero #cta .content a {
   text-shadow: 0 1px #59595b;
@@ -530,16 +486,6 @@ nav {
 nav section {
   width: 90%;
   margin: 0 auto;
-}
-@media screen and (min-width: 48em) {
-  nav section {
-    width: 46rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  nav section {
-    width: 62rem;
-  }
 }
 nav ul {
   margin: 0 ;
@@ -635,16 +581,6 @@ nav .zetta-logo {
   margin: 0 auto;
   margin-top: 3rem;
 }
-@media screen and (min-width: 48em) {
-  #get-started {
-    width: 46rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  #get-started {
-    width: 62rem;
-  }
-}
 #get-started .next-step button {
   width: 100%;
   font-size: 1.5rem;
@@ -682,16 +618,6 @@ nav .zetta-logo {
   height: 20.5rem;
   text-align: center;
   border-bottom: .5rem solid #d1d2d4;
-}
-@media screen and (min-width: 48em) {
-  #video {
-    width: 46rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  #video {
-    width: 62rem;
-  }
 }
 /*  
     Code highlighting 
@@ -827,16 +753,6 @@ section.description div {
   width: 90%;
   margin: 0 auto;
 }
-@media screen and (min-width: 48em) {
-  section.description div {
-    width: 46rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  section.description div {
-    width: 62rem;
-  }
-}
 section.description p:first-of-type {
   margin-top: 0;
 }
@@ -844,22 +760,28 @@ section.description p:first-of-type {
   width: 90%;
   margin: 0 auto;
 }
-@media screen and (min-width: 48em) {
-  .page_content {
-    width: 46rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  .page_content {
-    width: 62rem;
-  }
-}
 .page_content a {
   color: #b27b31;
 }
 #wampum {
   background-color: #fff;
   border-bottom: #59595b;
+}
+#device .actions,
+#device .properties {
+  padding-right: 2rem;
+}
+#device .properties {
+  overflow: hidden;
+}
+#device .properties table {
+  width: 100%;
+}
+#device .properties table td {
+  text-overflow: ellipsis;
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
 }
 /* footer */
 footer {

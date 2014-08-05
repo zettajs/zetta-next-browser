@@ -143,9 +143,7 @@ section.main{
 header, footer  {
   ul {margin: 0; padding: 0;}
 }
-header {
-    .centered();
-  }
+
 /* links */
 a {
   color: @yellow; 
@@ -504,6 +502,26 @@ section.description {
   border-bottom: @gray;
 }
 
+#device {
+  .actions, .properties {
+    padding-right: 2rem;
+  }
+  .properties {
+    overflow: hidden;
+    table {
+      width: 100%;
+      td {
+        text-overflow: ellipsis;
+
+        /* Required for text-overflow to do anything */
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+
 /* footer */
 
 footer {
@@ -543,8 +561,7 @@ footer {
 .centered(){
   width: 90%;
   margin: 0 auto;
-  @media @md { width: 46rem;  }
-  @media @lg { width: 62rem;  }
+  
 
 }
 .hairline-bottom(){

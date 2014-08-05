@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zetta Browser</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      <!-- Typekit! Also consider localizing -->
+      <script type="text/javascript">
+        (function(d) {
+          var tkTimeout=3000;
+          if(window.sessionStorage){if(sessionStorage.getItem('useTypekit')==='false'){tkTimeout=0;}}
+          var config = {
+            kitId: 'tpa7gzm',
+            scriptTimeout: tkTimeout
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+"wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+="wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+      <link rel="stylesheet" href="./styles/styles.css">
+  </head>
+  <body>
+    
+
+<header>  
+  <nav>
+    <section class="pure-g">
+        <a href="/" class="home pure-u-1-6"><div class="zetta-logo">zetta</div></a>
+      
+        
+        <ul class="pure-u-3-4">
+          <li><a href="#">Projects</a></li>  
+          <li>Mini Factory Detroit</li>
+        </ul>
+      <!--
+        <div class="pure-u-3-4" id="navToggle">
+          <button class="icon"><span>toggle menu</span></button>
+        </div>
+      -->
+      </section>
+  </nav>
+</header>
+
+  <section id="wampum">
+    Wampum goes here in nav.html
+    
+  </section> 
+  
+  
+  
+
+<section class="page_content pure-g" id="device">
+    <h1 class="pure-u-1">Device name</h1>
+
+        <div class="streams pure-u-1">
+          <div class="stream pure-g">
+            <div class="pure-u-1-4">
+              <h2>Value</h2>
+              <div class="name">Name</div>
+            </div>
+            <div class="vis pure-u-3-4">
+              Stream Visualization
+            </div>  
+          </div>
+          <div class="stream pure-g">
+            <div class="pure-u-1-4">
+              <h2>Value</h2>
+              <div class="name">Name</div>
+            </div>
+            <div class="vis pure-u-3-4">
+              Stream Visualization
+            </div>  
+          </div>
+        </div>
+        <section class="left_column pure-u-1 pure-u-md-1-3">
+          <div class="actions">
+            <h3>Actions</h3>
+            <div class="action_group">
+              <div class="action">
+                <form><button>Action In Group</button></form>
+              </div>
+              <div class="action">
+                <form><button>Action In Group</button></form>
+              </div>
+            </div>
+
+            <div class="action">
+              <form><button>Action</button></form>
+            </div>
+          </div><!-- /.actions -->
+          
+          <div class="properties">
+          <h3>Properties</h3>
+          <table class="pure-table pure-table-horizontal pure-table-striped">
+            <tr>
+              <td>Location</td>
+              <td>Detroit, MI</td>
+            </tr>
+            <tr>
+              <td>lat/long</td>
+              <td>42.331389, -83.045833</td>
+            </tr>
+            <tr>
+              <td>name</td>
+              <td>My Microphone</td>
+            </tr>
+            <tr>
+              <td>state</td>
+              <td>connected</td>
+            </tr>
+            <tr>
+              <td>uuid</td>
+              <td>b0ab2fd0-eaa1-11e3-87fb-5d46f</td>
+            </tr>
+            <tr>
+              <td>type</td>
+              <td>sound</td>
+            </tr>
+            <tr>
+              <td>customProp</td>
+              <td>myValue</td>
+            </tr>
+            <tr>
+              <td>customProp</td>
+              <td>myValue</td>
+            </tr>
+            <tr>
+              <td>product sheet</td>
+              <td>http://sheetz.zetta.com/12345</td>
+            </tr>
+          </table>
+        </div> <!-- /.properties -->
+        </section>
+        <section class="right_column pure-u-1 pure-u-md-2-3">
+          <div class="events">
+            <h3>Events</h3>
+            
+            connected
+on: 06/03/2014 at: 10:22.012 by: my-microphone in: mini-detroit-factory
+spike
+on: 06/03/2014 at: 10:23.313 by: my-microphone in: mini-detroit-factory 
+connected
+on: 06/03/2014 at: 10:22.012 by: my-microphone in: mini-detroit-factory
+spike
+on: 06/03/2014 at: 10:23.313 by: my-microphone in: mini-detroit-factory 
+connected
+on: 06/03/2014 at: 10:22.012 by: my-microphone in: mini-detroit-factory
+spike
+on: 06/03/2014 at: 10:23.313 by: my-microphone in: mini-detroit-factory 
+connected
+on: 06/03/2014 at: 10:22.012 by: my-microphone in: mini-detroit-factory
+spike
+on: 06/03/2014 at: 10:23.313 by: my-microphone in: mini-detroit-factory 
+
+
+          </div>
+          <div class="api_req pure-u-1">
+            <h3>API Request</h3>
+            <pre><code>GET /mini-factory-detroit/sound-sensor
+Host: zetta-cloud.herokuapp.com
+Accept: application/vnd.siren+json</code></pre>
+          </div>
+          <div class="api_res pure-u-1">
+            <h3>API Response</h3>
+            <pre><code>{
+  "class": [
+    "sound"
+  ],
+  "properties": {
+    "type": "sound",
+    "name": "sound-192.168.1.4",
+    "data": {},
+    "id": "4bad9c30-e830-11e3-8e94-ed43b3929b76",
+    "state": "on",
+    "streams": [
+      "sound/sound"
+    ]
+  },
+  "actions": [
+    {
+      "class": [
+        "event-subscription"
+      ],
+      "name": "sound-sound-subscribe",
+      "method": "subscribe",
+      "href": "ws://zetta-cloud.herokuapp.com/events",
+      "fields": [
+        {
+          "name": "name",
+          "type": "hidden",
+          "value": "sound/sound"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "http://zetta-cloud.herokuapp.com/mini-factory-detroit/sound-192.168.1.4"
+    },
+    {
+      "rel": [
+        "index"
+      ],
+      "href": "http://zetta-cloud.herokuapp.com/mini-factory-detroit"
+    }
+  ]
+}</code></pre>
+          </div>
+        </section>
+        
+  
+        
+        
+      
+    </section>
+  
+
+  
+ 
+      <footer>
+        <section class="main pure-g">
+          <section class="footer-logo pure-u-md-1-6 pure-u-1">
+          <a href="</a>"><div class="zetta-logo pure-u-3-4 pure-u-sm-3-4">zetta</div></a>
+          </section>
+          <div class="pure-u-md-5-6 pure-u-1">
+            <ul>
+              <li><a href="#">Get Started</a></li>  
+              <li><a href="#">Recipes</a></li>
+              <li><a href="#">Docs</a></li>
+              <li><a href="#">Github</a></li>
+              <li><a href="#">About Zetta</a></li>
+              <li><a href="#">@zettajs</a></li>
+              <li class="apigee">2014 <a href="#">Apigee</a></li>
+            </ul>
+            <div class="creative-commons">
+              <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="{{ site.url }}/images/cc_88x31.png"></a>
+              <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+            </div>
+          </div>
+        </section>
+      </footer>
+    
+  </body>
+  
+  <script type="text/javascript" src="{{ site.url }}/scripts/scripts.js"></script>
+</html>
