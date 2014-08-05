@@ -8,9 +8,9 @@ var gulp = require('gulp')
   , uglify = require('gulp-uglify')
   , prefix = require('gulp-autoprefixer')
   , sourcemaps = require('gulp-sourcemaps')
-  , liquid = require("gulp-liquid")
   , htmlmin = require('gulp-htmlmin')
-  , serve = require('gulp-serve');;
+  , serve = require('gulp-serve')
+  , fileinclude = require('gulp-file-include');;
 
 gulp.task('jshint', function() {
   gulp.src('./src/js/zetta.js')
@@ -62,16 +62,35 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./dist'))
 });
 
+gulp.task('fileinclude', function() {
+  gulp.src(['./src/pages/*.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(htmlmin({
+        useShortDoctype: true
+        , removeRedundantAttributes: true
+      /*, collapseWhitespace: true
+        , conservativeCollapse: true */
+      }))
+    .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('move', function() {
+  gulp.src(['./src/images/*.*']).pipe(gulp.dest('./dist/images'));
+});
 
 gulp.task('serve', serve({
     root: 'dist',
     port: 3000
 }));
 
-gulp.task('default', ['jshint','scripts', 'html', 'styles', 'serve'], function(){
+gulp.task('default', ['jshint','scripts', 'styles', 'fileinclude', 'move', 'serve'], function(){
   gulp.watch('./src/js/*.js', ['jshint', 'scripts']);
   gulp.watch('./src/styles/*.*', ['styles']);
-  gulp.watch('./src/*.html', ['html']);
+  gulp.watch(['./src/partials/*.html', './src/pages/*.html'], ['fileinclude']);
+  gulp.watch('./src/images', ['move']);
 });
 
 
