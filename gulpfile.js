@@ -12,6 +12,11 @@ var gulp = require('gulp')
   , serve = require('gulp-serve')
   , fileinclude = require('gulp-file-include');;
 
+/*
+Try this instead of fileinclude
+https://www.npmjs.org/package/gulp-angular-templates/
+*/
+
 gulp.task('jshint', function() {
   gulp.src('./src/js/zetta.js')
     .pipe(jshint())
