@@ -22,6 +22,9 @@
   author: 2014 Alan Languirand alanguirand@apigee.com
 ***/
 /* Apigee core colors */
+
+
+
 .orange {
   color: #ff4300;
 }
@@ -66,6 +69,8 @@
     display: none;
   }
 }
+
+background: #0180d1;
 @media screen and (min-width: 64em) {
   .hide-lg {
     display: none;

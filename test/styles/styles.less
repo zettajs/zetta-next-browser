@@ -1,0 +1,140 @@
+@import '/styles/ss-pika.less';
+@import '/styles/apigee-colors.less';
+@import '/styles/breakpoints.less';
+
+
+/* Global Stuff */
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    .body-font();
+    
+    h1, h2, h3, h4, h5, h6 { .heading-fonts(); }
+  
+    code {
+      .mono();
+    }
+    .icon, b { .pika(); }
+    b {font-weight: normal;}
+}
+
+body {
+  .body-font();
+  background-color: @gray_5;
+  color: @light-gray-bg;
+  color: @gray_40;
+}
+#page {
+  width: 80%;
+  margin: 0 auto;
+  .device {
+    background-color: #fff; 
+    &:not(:first-child){
+      background-image: linear-gradient(@gray_20 .1em, transparent .1em);
+      background-size: 100% 1rem;
+      background-repeat: no-repeat;
+    }
+  }
+  .row {
+    line-height: 1rem;
+    .switches, .name, .vis, .value {
+        padding: 1rem 0;
+        .body-font();
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    
+    }
+    
+    .value {
+      padding-left: 1rem;
+      color: @apigee-gray;
+    }
+    
+    
+    &:not(:first-child){
+      .name, .vis, .value {
+        background-image: linear-gradient(@gray_5 .1em, transparent .1em);
+        background-size: 100% 1rem;
+        background-repeat: no-repeat;
+      }
+      .name {
+        padding-left: 1rem;
+      }
+    }
+  
+    .switches{
+      padding:1rem;
+      text-align: justify;
+      b{
+        color: @gray_10;
+        margin-left: .25rem;
+
+        &:hover {
+          color: @apigee-gray;
+          cursor: pointer;
+        }
+      }
+    }
+    &.main {
+      .name {
+        color: @apigee-gray;
+        font-weight: 700;
+      }
+    }
+    
+    .sparkline {
+      background-color: @green;
+    }
+  }
+}
+
+
+.icon, b {
+  .pika();
+  &[class *= "pure-u"] {
+    .pika() !important;
+  }
+}
+b {font-weight: normal;}
+
+
+/* Mixins  */
+
+.pika() {
+  font-family: 'SSPika';
+  -moz-font-variant-ligatures: common-ligatures;
+  -webkit-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures; 
+}
+
+.heading-fonts() {
+  font-family: ars-maquette-web, 'ARS Maquette Pro', 'Myriad Pro', 'Gill Sans', 'Lucida Sans', Verdana,   Geneva, sans-serif;
+}
+
+.mono(){
+  font-family: "fira-mono",courier, monospace;
+}
+.body-font(){
+  font-family: "jaf-facitweb", Helvetica, Arial, sans-serif;
+}
+.menu() {
+  margin: 0; padding: 0;
+  li {
+    display: inline-block;
+    list-style-type: none;
+  }
+}
+.centered(){
+  width: 90%;
+  margin: 0 auto;
+  
+
+}
+.hairline-bottom(){
+  background-image: linear-gradient(transparent 1px, @light-grey-bg 1px);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+

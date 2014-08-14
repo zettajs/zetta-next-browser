@@ -24,7 +24,7 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('scripts', function() {
-  gulp.src(["./src/js/zetta.js"])
+  gulp.src(["./src/js/zetta.js", "angular.js"])
     .pipe(sourcemaps.init())
       .pipe(concat('scripts.js'))
   /*  .pipe(stripDebug()) */

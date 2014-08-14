@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zetta Browser Devices</title>
+    <link rel="stylesheet/less" type="text/css" href="styles/styles.less" />
+    <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <script type="text/javascript" src="less-1.7.4.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="jquery-handlebars-1.1.4.min.js"></script>
+    
+    <script type="text/javascript" src="//use.typekit.net/tpa7gzm.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
+    <script type="text/javascript">
+      $(function(){
+        $('#page').render('device', {
+          devices: [
+            {
+              name: "Apigee Pusher",
+              streams: [{name: "State",value: "standby"}],
+              actions: [{name: "push"}]
+            },
+            {
+              name: "~system",
+              streams: [{name: "State", value: "ready"}],
+              actions: [{name: "reboot"}]
+            },
+            {
+              name: "Temperature Sensor",
+              streams: [{name: "State", value: "on"}, {name: "temperature", value: 27}]
+            },
+            {
+              name: "Barometer",
+              streams: [{name: "State", value: "on"}, {name: "pressure", value: 134}]
+            },
+            {
+              name: "Humidity Sensor",
+              streams: [{name: "State", value: "on"}, {name: "humidity", value: 75}]
+            },
+            {
+              name: "Sound Sensor",
+              streams: [{name: "State", value: "on"}, {name: "level", value: -25}]
+            },
+            {
+              name: "Light Sensor",
+              streams: [{name: "State", value: "on"}, {name: "luminosity", value: 450}]
+            },
+            {
+              name: "Robot Arm",
+              streams: [{name: "State", value: "standby"}],
+              actions: [
+                {name: "move-claw"}, {name: "move-elbow"}, {name: "move-shoulder"}, {name: "pivot"}
+              ]
+            }      
+          ]
+        });
+      });
+      
+      /*
+      devices: [{
+        name: "Apigee Pusher",
+        streams: [{name: "State",value: "standby"}],
+        actions: [{name: "push"}]
+      }]
+      */
+      
+    </script>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      
+    
+    </div>
+    
+  </body>
+</html>
