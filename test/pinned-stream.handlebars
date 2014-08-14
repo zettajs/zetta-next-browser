@@ -1,0 +1,14 @@
+{{#each devices}}
+  <div class="row stream pure-g">
+    <div class="switches pure-u-1-6 pure-u-md-1-12"><b class="mute">eye</b>&nbsp;<b class="pin active">pushpin</b></div>
+    <div class="name pure-u-5-12 pure-u-md-1-4"><span class="server-name">{{server}} &gt; </span> <br/>
+      <span class="device-name">{{name}}</span><span class="stream-name"> :{{stream.name}}</span></div>
+    <div class="value pure-u-5-12 hide-md">{{stream.value}}</div>
+    <div class="pure-u-1-6 hide-md">&nbsp;</div>
+    <div class="vis pure-u-5-6 pure-u-md-5-12">
+      <div class="sparkline">sparkline</div>
+    </div>
+    <div class="value before-md pure-u-md-1-4"> {{stream.value}}</div>
+  </div>
+{{/each}}
+  

@@ -1,0 +1,47 @@
+.device-meta {
+  .centered();
+  h2.name {
+    .serverHeading(); text-transform: uppercase; 
+    @media @md{padding-left: 1rem;}
+  }
+  border-bottom: none !important;
+  .content {
+    background-color: #fff;
+    .border-top(@apigee-grey);
+    border-bottom: 2px solid @apigee-grey;
+    padding: 1rem;
+    pre {margin: 0; padding: 0}
+  }
+  .meta-group {
+    .smallPadding()
+  }
+  .actions, .properties {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    
+    padding-right: 1rem;
+  }
+}
+
+.focus {
+  h2.name, .device {.centered();}
+  h2.name {
+    
+    .serverHeading();
+    .smallPadding();
+    @media @md {padding: 2rem 0 1rem 0;}
+  }
+}
+
+.row {
+  .name{
+    padding-left: 1rem !important;
+    @media @md {padding-left: 0 !important;}
+  }
+}
+
+.smallPadding(){
+    padding-left: 1rem; padding-right: 1rem;
+    @media @md {padding: inherit;}
+  }
