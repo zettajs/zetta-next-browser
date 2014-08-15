@@ -41,52 +41,115 @@
   </nav>
 </header>
 
-  <section id="wampum">
-    Wampum goes here in nav.html
-    
-  </section> 
   
   
   
+  
+<section id="wampum">Wampum goes here</section> 
 
-<section class="page_content" id="overview">
-    <h1>Mini Factory Detroit</h1>
-    
-    <section id="devices" class="pure-g">
-      <div class="device pure-u-1-4">
-        <a href="show.html"><h3>Cool Device Name</h3></a>
 
-        <div class="streams">
-          <div class="stream">
-            <h2>Value</h2>
-            <div class="vis">
-              Stream Visualization
-            </div>
-            <div class="name">Name</div>
-          </div>
-        </div>
-        
-        <div class="actions">
-          <div class="action_group">
-            <div class="action">
-              <form><button>Action In Group</button></form>
-            </div>
-            <div class="action">
-              <form><button>Action In Group</button></form>
-            </div>
-          </div>
-          
-          <div class="action">
-            <form><button>Action</button></form>
-          </div>
-        </div>
-        
-      </div>
-      
+<section class="page_content pure-g" id="overview">
+  <header class="pure-u-1">
+    <section class="content">
+    <h1>~/root</h1>
     </section>
+  </header>
+  
+  <div class="pinned device-group pure-g">
+    <div class="pure-u-1-6 pure-u-md-1-12"></div>
+    <h2 class="name pure-u-5-6 pure-u-md-11-12">Pinned<span>:group</span></h2>
+    <section class="devices pure-u-1">some devices</section>
+  </div>
+
+  <div class="server device-group pure-g">
+    <div class="pure-u-1-6 pure-u-md-1-12"></div>
+    <h2 class="name pure-u-5-6 pure-u-md-11-12">Detroit<span>:Server</span></h2>
+    <section class="devices pure-u-1">some devices</section>
+  </div>  
+  <div class="muted device-group pure-g">
+    <div class="pure-u-1-6 pure-u-md-1-12"></div>
+    <h2 class="name pure-u-5-6 pure-u-md-11-12">Muted<span>:group</span></h2>
+    <section class="devices pure-u-1">some devices</section>
+  </div>
   
 </section>
-  
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="scripts/scripts.js"></script>
+<script type="text/javascript">
+     $(function(){
+       
+       $.handlebars({
+            templatePath: '/templates'
+        });
+       
+        $('.server .devices').render('device', {
+          devices: [
+            {
+              name: "Apigee Pusher",
+              streams: [{name: "State",value: "standby"}],
+              actions: [{name: "push"}]
+            },
+            {
+              name: "~system",
+              streams: [{name: "State", value: "ready"}],
+              actions: [{name: "reboot"}]
+            },
+            {
+              name: "Temperature Sensor",
+              streams: [{name: "State", value: "on"}, {name: "temperature", value: 27}]
+            },
+            {
+              name: "Barometer",
+              streams: [{name: "State", value: "on"}, {name: "pressure", value: 134}]
+            },
+            {
+              name: "Humidity Sensor",
+              streams: [{name: "State", value: "on"}, {name: "humidity", value: 75}]
+            },
+            {
+              name: "Sound Sensor",
+              streams: [{name: "State", value: "on"}, {name: "level", value: -25}]
+            },
+            {
+              name: "Light Sensor",
+              streams: [{name: "State", value: "on"}, {name: "luminosity", value: 450}]
+            },
+            {
+              name: "Robot Arm",
+              streams: [{name: "State", value: "standby"}],
+              actions: [
+                {name: "move-claw"}, {name: "move-elbow"}, {name: "move-shoulder"}, {name: "pivot"}
+              ]
+            },
+            {
+              name: "Display Screen",
+              streams: [{name: "State", value: "ready"}, {name: "Message", value: "zetta: Detroit/Robot Arm#move-elbow:up"}],
+              actions: [{name: "message"}]
+            }
+          ]
+        });
+        
+        $('.pinned .devices').render('pinned-action', {devices: [
+          {
+            name: "Display Screen",
+            stream: {name: "Message", value: "zetta: Detroit/Robot Arm#move-elbow:up"},
+            server: "Detroit"
+          },
+          {
+            name: "Light Sensor",
+            stream: {name: "luminosity", value: 450},
+            server: "Detroit"
+          },
+          {
+            name: "Light Sensor",
+            stream: {name: "luminosity", value: 450},
+            server: "Detroit"
+          }
+        ]});
+      });
+</script>
+
  
       <footer>
         <section class="main pure-g">
@@ -104,7 +167,7 @@
               <li class="apigee">2014 <a href="#">Apigee</a></li>
             </ul>
             <div class="creative-commons">
-              <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="{{ site.url }}/images/cc_88x31.png"></a>
+              <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="images/cc_88x31.png"></a>
               <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
             </div>
           </div>
@@ -113,5 +176,5 @@
     
   </body>
   
-  <script type="text/javascript" src="{{ site.url }}/scripts/scripts.js"></script>
+  <!-- <script type="text/javascript" src="scripts/scripts.js"></script> -->
 </html>

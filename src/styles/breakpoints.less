@@ -19,15 +19,15 @@
 @axl: ~"screen and (max-width: 80em)";
 
 /* simple ways to hide stuff */
-.hide-sm { @media @sm {display: none;} }
-.hide-md { @media @md {display: none;} }
-.hide-lg { @media @lg {display: none;} }
-.hide-xl { @media @xl {display: none;} }
+.hide-sm { @media @sm {display: none !important;} }
+.hide-md { @media @md {display: none !important;} }
+.hide-lg { @media @lg {display: none !important;} }
+.hide-xl { @media @xl {display: none !important;} }
 
-.before-sm { @media @asm {display: none;} }
-.before-md { @media @amd {display: none;} }
-.before-lg { @media @alg {display: none;} }
-.before-xl { @media @axl {display: none;} }
+.before-sm { @media @asm {display: none !important;} }
+.before-md { @media @amd {display: none !important;} }
+.before-lg { @media @alg {display: none !important;} }
+.before-xl { @media @axl {display: none !important;} }
 
 
 .only-sm { 

@@ -24,13 +24,13 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('scripts', function() {
-  gulp.src(["./src/js/zetta.js", "angular.js"])
+  gulp.src(["./src/scripts/zetta.js", "./src/scripts/jquery-handlebars-1.1.4.min.js", "angular.js"])
     .pipe(sourcemaps.init())
       .pipe(concat('scripts.js'))
   /*  .pipe(stripDebug()) */
       .pipe(uglify({mangle:false}))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./src/scripts'))
+    .pipe(gulp.dest('./dist/scripts'))
 });
 
 gulp.task('styles',['css'], function() {
@@ -40,6 +40,8 @@ gulp.task('styles',['css'], function() {
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
     .pipe(gulp.dest('./src/styles'));
+  
+  gulp.src('./src/styles/fonts/*.*').pipe(gulp.dest('./dist/styles/fonts'));
 });
 
 gulp.task('css', function() {
@@ -47,7 +49,7 @@ gulp.task('css', function() {
             './src/styles/grids-responsive-min.css', 
             './src/styles/styles.css'])
     .pipe(sourcemaps.init())
-      .pipe(prefix("last 2 version", "> 5%", "ie 9"))
+      /* .pipe(prefix("last 2 version", "> 5%", "ie 9")) */
       .pipe(concat('styles.css'))
       .pipe(minifyCSS({noAdvanced:true, keepSpecialComments: 0}))
     .pipe(sourcemaps.write())
@@ -84,6 +86,7 @@ gulp.task('fileinclude', function() {
 
 gulp.task('move', function() {
   gulp.src(['./src/images/*.*']).pipe(gulp.dest('./dist/images'));
+  gulp.src(['./src/templates/*.*']).pipe(gulp.dest('./dist/templates'));
 });
 
 gulp.task('serve', serve({
@@ -95,7 +98,8 @@ gulp.task('default', ['jshint','scripts', 'styles', 'fileinclude', 'move', 'serv
   gulp.watch('./src/js/*.js', ['jshint', 'scripts']);
   gulp.watch('./src/styles/*.*', ['styles']);
   gulp.watch(['./src/partials/*.html', './src/pages/*.html'], ['fileinclude']);
-  gulp.watch('./src/images', ['move']);
+  gulp.watch(['./src/images','./src/templates/*.*'], ['move']);
+
 });
 
 

@@ -1,0 +1,35 @@
+{{#each devices}}
+<section class="device pure-u-1">
+  <div class="row main pure-g">
+    <div class="pure-u-1-6 pure-u-md-1-12"></div>
+    <div class="name pure-u-5-6 pure-u-md-11-12">{{name}}</div>
+  </div>
+  
+  {{#each streams}}
+  <div class="row stream pure-g">
+    <div class="switches pure-u-1-6 pure-u-md-1-12"><b class="mute">eye</b>&nbsp;<b class="pin">pushpin</b></div>
+    <div class="name pure-u-5-12 pure-u-md-1-4">: {{name}}</div>
+    <div class="value pure-u-5-12 hide-md">{{value}}</div>
+    <div class="pure-u-1-6 hide-md">&nbsp;</div>
+    <div class="vis pure-u-5-6 pure-u-md-5-12">
+      <div class="sparkline">sparkline</div>
+    </div>
+    <div class="value before-md pure-u-md-1-4"> {{value}}</div>
+  </div>
+  {{/each}}
+  
+  {{#each actions}}
+  <div class="row action pure-g">
+    <div class="switches pure-u-1-6 pure-u-md-1-12"><b class="mute">eye</b>&nbsp;<b class="pin">pushpin</b></div>
+    <div class="name pure-u-5-6 pure-u-md-1-4">#{{name}}</div>
+    <div class="pure-u-1-6 hide-md">&nbsp;</div>
+    <div class="vis pure-u-5-6 pure-u-md-2-3">
+        <form class="action pure-form">
+          <input type="text" placeholder="message" class=""/>
+          <button class="pure-button">action</button>
+        </form>
+    </div>
+  </div>
+  {{/each}}
+</section>
+{{/each}}
