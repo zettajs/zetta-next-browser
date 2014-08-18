@@ -47,172 +47,118 @@
   
 <section id="wampum">Wampum goes here</section> 
 
-<section class="page_content pure-g" id="device">
-    <h1 class="pure-u-1">Device name</h1>
+<section class="page_content pure-g" id="show">
+  <header class="pure-u-1">
+    <section class="content">
+    <h1>Device name</h1>
+    </section>
+  </header>
 
-        <div class="streams pure-u-1">
-          <div class="stream pure-g">
-            <div class="pure-u-1-4">
-              <h2>Value</h2>
-              <div class="name">Name</div>
-            </div>
-            <div class="vis pure-u-3-4">
-              Stream Visualization
-            </div>  
-          </div>
-          <div class="stream pure-g">
-            <div class="pure-u-1-4">
-              <h2>Value</h2>
-              <div class="name">Name</div>
-            </div>
-            <div class="vis pure-u-3-4">
-              Stream Visualization
-            </div>  
-          </div>
+  <div class="focus pure-u-1">
+        <div class="characteristic">
+          <h2 class="name">Light Sensor</h2>
+          <section class="devices pure-g">
+            <section class="device pure-u-1">
+
+              <div class="row stream pure-g">
+                <div class="name pure-u-1-2 pure-u-md-1-3">: State</div>
+                <div class="value pure-u-1-2 hide-md">on</div>
+                <div class="vis pure-u-1 pure-u-md-5-12">
+                  <div class="sparkline">sparkline</div>
+                </div>
+                <div class="value before-md pure-u-md-1-4"> on</div>
+              </div>
+
+              <div class="row stream pure-g">
+                <div class="name pure-u-1-2 pure-u-md-1-3">: luminosity</div>
+                <div class="value pure-u-1-2 hide-md">450</div>
+                <div class="vis pure-u-1 pure-u-md-5-12">
+                  <div class="sparkline">sparkline</div>
+                </div>
+                <div class="value before-md pure-u-md-1-4"> 450</div>
+              </div>
+            </section>
+          </section>
         </div>
-        <section class="left_column pure-u-1 pure-u-md-1-3">
-          <div class="actions">
-            <h3>Actions</h3>
-            <div class="action_group">
-              <div class="action">
-                <form><button>Action In Group</button></form>
-              </div>
-              <div class="action">
-                <form><button>Action In Group</button></form>
-              </div>
-            </div>
-
-            <div class="action">
-              <form><button>Action</button></form>
-            </div>
-          </div><!-- /.actions -->
-          
-          <div class="properties">
-          <h3>Properties</h3>
-          <table class="pure-table pure-table-horizontal pure-table-striped">
-            <tr>
-              <td>Location</td>
-              <td>Detroit, MI</td>
-            </tr>
-            <tr>
-              <td>lat/long</td>
-              <td>42.331389, -83.045833</td>
-            </tr>
-            <tr>
-              <td>name</td>
-              <td>My Microphone</td>
-            </tr>
-            <tr>
-              <td>state</td>
-              <td>connected</td>
-            </tr>
-            <tr>
-              <td>uuid</td>
-              <td>b0ab2fd0-eaa1-11e3-87fb-5d46f</td>
-            </tr>
-            <tr>
-              <td>type</td>
-              <td>sound</td>
-            </tr>
-            <tr>
-              <td>customProp</td>
-              <td>myValue</td>
-            </tr>
-            <tr>
-              <td>customProp</td>
-              <td>myValue</td>
-            </tr>
-            <tr>
-              <td>product sheet</td>
-              <td>http://sheetz.zetta.com/12345</td>
-            </tr>
-          </table>
-        </div> <!-- /.properties -->
-        </section>
-        <section class="right_column pure-u-1 pure-u-md-2-3">
-          <div class="events">
-            <h3>Events</h3>
-            <textarea>
-            connected
-on: 06/03/2014 at: 10:22.012 by: my-microphone in: mini-detroit-factory
-spike
-on: 06/03/2014 at: 10:23.313 by: my-microphone in: mini-detroit-factory 
-connected
-on: 06/03/2014 at: 10:22.012 by: my-microphone in: mini-detroit-factory
-spike
-on: 06/03/2014 at: 10:23.313 by: my-microphone in: mini-detroit-factory 
-connected
-on: 06/03/2014 at: 10:22.012 by: my-microphone in: mini-detroit-factory
-spike
-on: 06/03/2014 at: 10:23.313 by: my-microphone in: mini-detroit-factory 
-connected
-on: 06/03/2014 at: 10:22.012 by: my-microphone in: mini-detroit-factory
-spike
-on: 06/03/2014 at: 10:23.313 by: my-microphone in: mini-detroit-factory 
-
-            </textarea>
-          </div>
-          <div class="api_req pure-u-1">
-            <h3>API Request</h3>
-            <pre><code>GET /mini-factory-detroit/sound-sensor
-Host: zetta-cloud.herokuapp.com
-Accept: application/vnd.siren+json</code></pre>
-          </div>
-          <div class="api_res pure-u-1">
-            <h3>API Response</h3>
-            <pre><code>{
+      </div>  
+      
+      <section class="device-meta pure-g">
+        <div class="actions meta-group pure-u-1 pure-u-md-1-3">
+          <h2 class="name pure-u-1">Actions</h2>
+          <section class="content">
+            No Actions Available
+          </section>
+        </div>
+        
+        <div class="log meta-group pure-u-1 pure-u-md-2-3">
+          <h2 class="name pure-u-1">Events</h2>
+          <section class="content">
+            <code><pre>LOG Entry</pre></code>
+          </section>
+        </div>
+        
+        <div class="properties meta-group pure-u-1 pure-u-md-1-3">
+          <h2 class="name pure-u-1">Properties</h2>
+          <section class="content">
+            properties table
+          </section>
+        </div>
+        
+        <div class="api meta-group pure-u-1 pure-u-md-2-3">
+          <h2 class="name pure-u-1">API Request</h2>
+          <section class="content request">
+            <code><pre>GET http://zetta-cloud-2.herokuapp.com/servers/732a32dc-ca0c-4316-acb4-95d86cddba39/devices/6a205c3e-fca2-472d-8183-7f95cabae996</pre></code>
+          </section>
+          <h2 class="name pure-u-1">API Response</h2>
+          <section class="content response">
+<code><pre>{
   "class": [
-    "sound"
+    "device"
   ],
   "properties": {
-    "type": "sound",
-    "name": "sound-192.168.1.4",
-    "data": {},
-    "id": "4bad9c30-e830-11e3-8e94-ed43b3929b76",
-    "state": "on",
-    "streams": [
-      "sound/sound"
-    ]
+    "ipAddress": "192.168.1.10",
+    "luminosity": 852,
+    "id": "6a205c3e-fca2-472d-8183-7f95cabae996",
+    "type": "light",
+    "name": "Light Sensor",
+    "state": "on"
   },
-  "actions": [
-    {
-      "class": [
-        "event-subscription"
-      ],
-      "name": "sound-sound-subscribe",
-      "method": "subscribe",
-      "href": "ws://zetta-cloud.herokuapp.com/events",
-      "fields": [
-        {
-          "name": "name",
-          "type": "hidden",
-          "value": "sound/sound"
-        }
-      ]
-    }
-  ],
+  "actions": null,
   "links": [
     {
       "rel": [
         "self"
       ],
-      "href": "http://zetta-cloud.herokuapp.com/mini-factory-detroit/sound-192.168.1.4"
+      "href": "http:\/\/zetta-cloud-2.herokuapp.com\/servers\/732a32dc-ca0c-4316-acb4-95d86cddba39\/devices\/6a205c3e-fca2-472d-8183-7f95cabae996"
     },
     {
       "rel": [
-        "index"
+        "up",
+        "http:\/\/rels.zettajs.io\/server"
       ],
-      "href": "http://zetta-cloud.herokuapp.com/mini-factory-detroit"
+      "href": "http:\/\/zetta-cloud-2.herokuapp.com\/servers\/732a32dc-ca0c-4316-acb4-95d86cddba39"
+    },
+    {
+      "title": "state",
+      "rel": [
+        "monitor",
+        "http:\/\/rels.zettajs.io\/object-stream"
+      ],
+      "href": "ws:\/\/zetta-cloud-2.herokuapp.com\/servers\/732a32dc-ca0c-4316-acb4-95d86cddba39\/events?topic=light%2F6a205c3e-fca2-472d-8183-7f95cabae996%2Fstate"
+    },
+    {
+      "title": "luminosity",
+      "rel": [
+        "monitor",
+        "http:\/\/rels.zettajs.io\/object-stream"
+      ],
+      "href": "ws:\/\/zetta-cloud-2.herokuapp.com\/servers\/732a32dc-ca0c-4316-acb4-95d86cddba39\/events?topic=light%2F6a205c3e-fca2-472d-8183-7f95cabae996%2Fluminosity"
     }
   ]
-}</code></pre>
-          </div>
-        </section>
-
-    </section>
-  
-
-  
+}</pre></code>
+        </section></div>
+      </section>
+</section>  
  
       <footer>
         <section class="main pure-g">

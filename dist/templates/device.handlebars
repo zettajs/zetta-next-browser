@@ -2,13 +2,13 @@
 <section class="device pure-u-1">
   <div class="row main pure-g">
     <div class="pure-u-1-6 pure-u-md-1-12"></div>
-    <div class="name pure-u-5-6 pure-u-md-11-12">{{name}}</div>
+    <div class="name pure-u-5-6 pure-u-md-11-12"><a href="show.html">{{name}}</a></div>
   </div>
   
   {{#each streams}}
   <div class="row stream pure-g">
     <div class="switches pure-u-1-6 pure-u-md-1-12"><b class="mute">eye</b>&nbsp;<b class="pin">pushpin</b></div>
-    <div class="name pure-u-5-12 pure-u-md-1-4">: {{name}}</div>
+    <div class="name pure-u-5-12 pure-u-md-1-4"><a href="show.html">: {{name}}</a></div>
     <div class="value pure-u-5-12 hide-md">{{value}}</div>
     <div class="pure-u-1-6 hide-md">&nbsp;</div>
     <div class="vis pure-u-5-6 pure-u-md-5-12">
@@ -23,7 +23,7 @@
     {{! pin/mute buttons }}
     <div class="switches pure-u-1-6 pure-u-md-1-12"><b class="mute">eye</b>&nbsp;<b class="pin">pushpin</b></div>
     
-    <div class="name before-md pure-u-5-6 pure-u-md-1-4">#{{name}}</div>
+    <div class="name before-md pure-u-5-6 pure-u-md-1-4"><a href="show.html">#{{name}}</a></div>
     {{! spacer for vis area on mobile }}
     
     <div class="vis pure-u-5-6 pure-u-md-5-12">

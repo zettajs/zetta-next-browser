@@ -652,11 +652,12 @@ nav .zetta-logo {
 pre {
   margin: 0;
   padding: 0 1rem;
-  background-color: #0b1a1f;
+  /*background-color: @dark;*/
   border-radius: .3em;
 }
 pre code {
-  background-color: #0b1a1f !important;
+  font-family: "fira-mono", courier, monospace;
+  /*background-color: @dark !important;*/
   margin: 0;
   padding: 0;
 }
