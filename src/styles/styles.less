@@ -565,6 +565,10 @@ footer {
   a {text-shadow: none;}
 }
 
+
+@import 'overview.less';
+
+
 /* Mixins  */
 .heading-fonts() {
   font-family: ars-maquette-web, 'ARS Maquette Pro', 'Myriad Pro', 'Gill Sans', 'Lucida Sans', Verdana,   Geneva, sans-serif;
@@ -615,21 +619,35 @@ footer {
 }
 
 .border-top(@color, @width: 2px){
+  border-top: @width solid @color;
+  /*
   background-image: linear-gradient(@color @width, transparent @width);
   background-size: 100% @width;
   background-repeat: no-repeat;
   background-position: top;
+  */
 }
 
 .border-bottom(@color, @width: 2px){
+  border-top: @width solid @color;
+  
+  /*
   background-image: linear-gradient(transparent @width, @color @width);
   background-size: 100% @width;
   background-repeat: no-repeat;
   background-position: bottom;
+  */
 }
+
+.border-box(){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .smallPadding(){
     padding-left: 1rem; padding-right: 1rem;
     @media @md {padding-left: inherit; padding-right: inherit;}
 }
 
-@import 'overview.less';
+

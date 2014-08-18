@@ -105,10 +105,26 @@
       margin:0 1rem 1rem 1rem;
       @media @md { margin:1rem 0; }
     }
-    .action {
-      margin:0rem 1rem .5rem 1rem;
-      @media @md { margin:.5rem 0 0rem 0; }
-      
+    &.action {
+      .border-box();
+      .value {
+        .border-box();
+        padding: 0rem .5rem .5rem 0;
+        text-align: right;
+        border-top: none;
+        @media @md {
+          padding: .5rem 1rem;
+          text-align: left;
+          .border-top(@gray_5, 1px);
+        }
+      }
+      .vis {
+        .border-box();
+        padding: .5rem 1rem;
+        @media @md {
+          padding: .5rem 0rem;
+        }
+      }
     }
   }
   
@@ -164,9 +180,7 @@ b {font-weight: normal;}
     .smallPadding()
   }
   .actions, .properties {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    .border-box();
     
     padding-right: 1rem;
   }

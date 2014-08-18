@@ -872,7 +872,6 @@ footer .zetta-logo {
 footer a {
   text-shadow: none;
 }
-/* Mixins  */
 .device-group,
 .device-meta {
   border-bottom: 2px solid #59595b;
@@ -900,10 +899,13 @@ footer a {
 }
 .pinned .devices .row:not(:first-child) .switches,
 .muted .devices .row:not(:first-child) .switches {
-  background-image: linear-gradient(#f2f2f2 1px, transparent 1px);
-  background-size: 100% 1px;
+  border-top: 1px solid #f2f2f2;
+  /*
+  background-image: linear-gradient(@color @width, transparent @width);
+  background-size: 100% @width;
   background-repeat: no-repeat;
   background-position: top;
+  */
 }
 .pinned .devices .row .name,
 .muted .devices .row .name {
@@ -944,19 +946,25 @@ footer a {
 }
 .devices {
   background-color: #fff;
-  background-image: linear-gradient(#59595b 2px, transparent 2px);
-  background-size: 100% 2px;
+  border-top: 2px solid #59595b;
+  /*
+  background-image: linear-gradient(@color @width, transparent @width);
+  background-size: 100% @width;
   background-repeat: no-repeat;
   background-position: top;
+  */
 }
 .devices .device {
   background-color: transparent;
 }
 .devices .device:not(:first-child) {
-  background-image: linear-gradient(#cccccc 1px, transparent 1px);
-  background-size: 100% 1px;
+  border-top: 1px solid #cccccc;
+  /*
+  background-image: linear-gradient(@color @width, transparent @width);
+  background-size: 100% @width;
   background-repeat: no-repeat;
   background-position: top;
+  */
 }
 .devices .row {
   line-height: 1rem;
@@ -990,19 +998,25 @@ footer a {
 }
 .devices .row:not(:first-child) .name,
 .devices .row:not(:first-child) .value {
-  background-image: linear-gradient(#f2f2f2 1px, transparent 1px);
-  background-size: 100% 1px;
+  border-top: 1px solid #f2f2f2;
+  /*
+  background-image: linear-gradient(@color @width, transparent @width);
+  background-size: 100% @width;
   background-repeat: no-repeat;
   background-position: top;
+  */
   padding-left: 1rem;
 }
 @media screen and (min-width: 48em) {
   .devices .row:not(:first-child) .vis,
   .devices .row:not(:first-child) .value {
-    background-image: linear-gradient(#f2f2f2 1px, transparent 1px);
-    background-size: 100% 1px;
-    background-repeat: no-repeat;
-    background-position: top;
+    border-top: 1px solid #f2f2f2;
+    /*
+  background-image: linear-gradient(@color @width, transparent @width);
+  background-size: 100% @width;
+  background-repeat: no-repeat;
+  background-position: top;
+  */
   }
 }
 .devices .row .switches {
@@ -1030,12 +1044,41 @@ footer a {
     margin: 1rem 0;
   }
 }
-.devices .row .action {
-  margin: 0rem 1rem .5rem 1rem;
+.devices .row.action {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.devices .row.action .value {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0rem .5rem .5rem 0;
+  text-align: right;
+  border-top: none;
 }
 @media screen and (min-width: 48em) {
-  .devices .row .action {
-    margin: .5rem 0 0rem 0;
+  .devices .row.action .value {
+    padding: .5rem 1rem;
+    text-align: left;
+    border-top: 1px solid #f2f2f2;
+    /*
+  background-image: linear-gradient(@color @width, transparent @width);
+  background-size: 100% @width;
+  background-repeat: no-repeat;
+  background-position: top;
+  */
+  }
+}
+.devices .row.action .vis {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: .5rem 1rem;
+}
+@media screen and (min-width: 48em) {
+  .devices .row.action .vis {
+    padding: .5rem 0rem;
   }
 }
 input {
@@ -1104,10 +1147,13 @@ b {
 }
 .device-meta .content {
   background-color: #fff;
-  background-image: linear-gradient(#59595b 2px, transparent 2px);
-  background-size: 100% 2px;
+  border-top: 2px solid #59595b;
+  /*
+  background-image: linear-gradient(@color @width, transparent @width);
+  background-size: 100% @width;
   background-repeat: no-repeat;
   background-position: top;
+  */
   border-bottom: 2px solid #59595b;
   padding: 1rem;
 }
@@ -1174,4 +1220,5 @@ b {
     padding-left: 0 !important;
   }
 }
+/* Mixins  */
 /*# sourceMappingURL=styles.css.map */

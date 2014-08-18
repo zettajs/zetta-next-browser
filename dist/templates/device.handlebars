@@ -19,17 +19,22 @@
   {{/each}}
   
   {{#each actions}}
-  <div class="row action pure-g">
+  <form class="row action pure-g pure-form">
+    {{! pin/mute buttons }}
     <div class="switches pure-u-1-6 pure-u-md-1-12"><b class="mute">eye</b>&nbsp;<b class="pin">pushpin</b></div>
-    <div class="name pure-u-5-6 pure-u-md-1-4">#{{name}}</div>
-    <div class="pure-u-1-6 hide-md">&nbsp;</div>
-    <div class="vis pure-u-5-6 pure-u-md-2-3">
-        <form class="action pure-form">
-          <input type="text" placeholder="message" class=""/>
-          <button class="pure-button">action</button>
-        </form>
+    
+    <div class="name before-md pure-u-5-6 pure-u-md-1-4">#{{name}}</div>
+    {{! spacer for vis area on mobile }}
+    
+    <div class="vis pure-u-5-6 pure-u-md-5-12">
+        <input type="text" placeholder="message" class="pure-input-1"/>
     </div>
-  </div>
+      
+    <div class="value pure-u-1 pure-u-md-1-4">
+      <button class="pure-button">{{name}}</button>
+    </div>
+      
+  </form>
   {{/each}}
 </section>
 {{/each}}
