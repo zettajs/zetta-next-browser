@@ -45,7 +45,11 @@
   
   
   
-<section id="wampum">Wampum goes here</section> 
+<!-- Set ".page_content header : padding-top" to the height of the wampum with javascript for proper header spacing. -->
+<section id="wampum">
+  Wampum goes here.
+  Set <code>".page_content header : padding-top"</code> to the height of the wampum with javascript for proper header spacing.
+</section> 
 
 <section class="page_content pure-g" id="show">
   <header class="pure-u-1">
@@ -54,33 +58,30 @@
     </section>
   </header>
 
-  <div class="focus pure-u-1">
-        <div class="characteristic">
-          <h2 class="name">Light Sensor</h2>
-          <section class="devices pure-g">
-            <section class="device pure-u-1">
-
-              <div class="row stream pure-g">
-                <div class="name pure-u-1-2 pure-u-md-1-3">: State</div>
-                <div class="value pure-u-1-2 hide-md">on</div>
-                <div class="vis pure-u-1 pure-u-md-5-12">
-                  <div class="sparkline">sparkline</div>
+    <div class="focus pure-u-1">
+          <div class="streams">
+            <section class="stream numerical pure-g">
+                <div class="meta pure-u-1 pure-u-md-1-3">
+                  <div class="value"><span>26.2</span></div>
+                  <div class="name">: Tepmerature</div>
+                </div> 
+                <div class="pure-u-1 pure-u-md-2-3">
+                    <div class="vis">sparkline</div>
                 </div>
-                <div class="value before-md pure-u-md-1-4"> on</div>
-              </div>
-
-              <div class="row stream pure-g">
-                <div class="name pure-u-1-2 pure-u-md-1-3">: luminosity</div>
-                <div class="value pure-u-1-2 hide-md">450</div>
-                <div class="vis pure-u-1 pure-u-md-5-12">
-                  <div class="sparkline">sparkline</div>
-                </div>
-                <div class="value before-md pure-u-md-1-4"> 450</div>
-              </div>
+                
             </section>
-          </section>
-        </div>
-      </div>  
+            <section class="stream categorical pure-g">
+                <div class="meta pure-u-1 pure-u-md-1-3">
+                  <div class="value"><span>Zetta-next-browser: Robot-Arm: Elbow: Elbow-down</span></div>
+                  <div class="name">: State</div>
+                </div> 
+                <div class="pure-u-1 pure-u-md-2-3">
+                    <div class="vis">Category Stream</div>
+                </div>
+                
+            </section>
+          </div>
+   </div>  
       
       <section class="device-meta pure-g">
         <div class="actions meta-group pure-u-1 pure-u-md-1-3">

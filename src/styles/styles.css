@@ -492,7 +492,6 @@ a.home:hover {
 nav {
   background-color: #0b1a1f;
   text-align: left;
-  height: 12rem;
   height: 2.5rem;
 }
 nav section {
@@ -788,17 +787,26 @@ section.description div {
 section.description p:first-of-type {
   margin-top: 0;
 }
+header nav,
+#wampum {
+  position: fixed;
+  width: 100%;
+}
+#wampum {
+  top: 2.5rem;
+}
 .page_content a {
   color: #b27b31;
 }
 .page_content header {
+  margin-top: 2.5rem;
   background-color: #fff;
-  padding: 1rem 0;
+  padding: 0;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 .page_content header h1 {
-  margin: 0;
+  margin: 3rem 0 1rem 0;
 }
 @media screen and (min-width: 48em) {
   .page_content header {
@@ -845,6 +853,9 @@ section.description p:first-of-type {
   /* Required for text-overflow to do anything */
   white-space: nowrap;
   overflow: hidden;
+}
+.front-door header {
+  padding-bottom: 1rem;
 }
 /* footer */
 footer {
@@ -1103,23 +1114,6 @@ input {
 .pure-button:hover {
   color: #000;
 }
-.icon,
-b {
-  font-family: 'SSPika';
-  -moz-font-variant-ligatures: common-ligatures;
-  -webkit-font-variant-ligatures: common-ligatures;
-  font-variant-ligatures: common-ligatures;
-}
-.icon[class*="pure-u"],
-b[class*="pure-u"] {
-  font-family: 'SSPika' !important;
-  -moz-font-variant-ligatures: common-ligatures !important;
-  -webkit-font-variant-ligatures: common-ligatures !important;
-  font-variant-ligatures: common-ligatures !important;
-}
-b {
-  font-weight: normal;
-}
 .device-meta {
   width: 100%;
   border-bottom: none !important;
@@ -1179,46 +1173,98 @@ b {
   box-sizing: border-box;
   padding-right: 1rem;
 }
-.focus h2.name,
-.focus .device {
+/* Device Show */
+.focus {
+  background-color: #fff;
+  border-top: 2px solid #59595b;
+  /*
+  background-image: linear-gradient(@color @width, transparent @width);
+  background-size: 100% @width;
+  background-repeat: no-repeat;
+  background-position: top;
+  */
+  border-bottom: 2px solid #59595b;
+  /*
+  background-image: linear-gradient(transparent @width, @color @width);
+  background-size: 100% @width;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  */
+  margin-top: 1rem;
+}
+.focus .streams {
+  padding: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
 }
 @media screen and (min-width: 48em) {
-  .focus h2.name,
-  .focus .device {
-    width: 90%;
-    margin: 0 auto !important;
-  }
-}
-.focus h2.name {
-  font-size: 1rem;
-  line-height: 1rem;
-  margin: 0;
-  padding: 2rem 0 1rem 0;
-  font-family: "jaf-facitweb", Helvetica, Arial, sans-serif !important;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.focus h2.name span {
-  font-weight: 100;
-}
-@media screen and (min-width: 48em) {
-  .focus h2.name {
+  .focus .streams {
     padding-left: inherit;
     padding-right: inherit;
   }
 }
 @media screen and (min-width: 48em) {
-  .focus h2.name {
-    padding: 2rem 0 1rem 0;
+  .focus .streams {
+    width: 90%;
+    margin: 0 auto !important;
   }
 }
-.row .name {
-  padding-left: 1rem !important;
+.focus .streams .stream {
+  padding: 1rem 0;
+}
+.focus .streams .stream:not(:first-child) {
+  border-top: 1px solid #ededed;
+  /*
+  background-image: linear-gradient(@color @width, transparent @width);
+  background-size: 100% @width;
+  background-repeat: no-repeat;
+  background-position: top;
+  */
+}
+.focus .streams .stream .value {
+  font-size: 4rem;
+  line-height: 4rem;
+  height: 4rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.focus .streams .stream .value span:hover {
+  position: absolute;
+  overflow: visible;
+  white-space: pre-wrap;
+  max-width: 80%;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px #59595b;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+.focus .streams .stream.numerical .vis,
+.focus .streams .stream.categorical .vis {
+  background-color: #eee;
+}
+.focus .streams .stream.numerical .vis {
+  height: 6rem;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 48em) {
-  .row .name {
-    padding-left: 0 !important;
+  .focus .streams .stream.numerical .vis {
+    margin-top: 0rem;
+  }
+}
+.focus .streams .stream.categorical .vis {
+  height: 3rem;
+  margin-top: 1rem;
+}
+@media screen and (min-width: 48em) {
+  .focus .streams .stream.categorical .vis {
+    margin-top: 1.5rem;
   }
 }
 /* Mixins  */

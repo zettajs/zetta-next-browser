@@ -220,7 +220,6 @@ nav {
   }
   background-color: @dark;
   text-align: left;
-  height: 12rem;
   
   ul {
     margin: 0 ;
@@ -496,14 +495,22 @@ section.description {
   p:first-of-type {margin-top: 0;}
   padding-bottom: 1rem;
 }
+
+header nav, #wampum {
+  position: fixed;
+  width: 100%;
+}
+#wampum {top: 2.5rem;}
+
 .page_content {
   
   a {color: mix(@yellow, @dark, 70%);}
 
   header {
+    margin-top: 2.5rem;
     background-color: #fff;
-    padding: 1rem 0;
-    h1 {margin: 0;}
+    padding: 0;
+    h1 {margin: 3rem 0 1rem 0;}
     .smallPadding();
     
     .content {
@@ -547,7 +554,7 @@ section.description {
   }
 }
 
-
+.front-door header {padding-bottom: 1rem;}
 /* footer */
 
 footer {
@@ -568,6 +575,75 @@ footer {
 
 
 @import 'overview.less';
+
+/* Device Show */
+
+.focus {
+  background-color: #fff;
+  .border-top(@apigee-gray); .border-bottom(@apigee-gray);
+  margin-top: 1rem;
+  
+  .streams {
+    
+    padding: 0;
+    .smallPadding();
+    .border-box();
+    .centered();
+    .stream {
+      
+      padding: 1rem 0;
+      &:not(:first-child){
+        .border-top(@light-gray-bg, 1px); 
+      }
+    
+      .value {
+        font-size: 4rem;
+        line-height: 4rem;
+        height: 4rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-top: 1rem; 
+        span:hover {
+           position: absolute;
+           overflow: visible;
+           white-space: pre-wrap;
+           max-width: 80%;
+           padding: 1rem;
+           background-color: #fff;
+           box-shadow: 0px 0px 5px @apigee-grey;
+           
+           font-size: 2rem;
+           line-height: 2rem;
+        }
+       
+      }
+      
+      &.numerical .vis, &.categorical .vis {
+        background-color: #eee;
+      }
+      &.numerical{
+        
+        .vis {
+          height: 6rem;
+          margin-top: 1rem;
+          @media @md {margin-top: 0rem;}
+        }
+      }
+      &.categorical {
+        .vis {
+          height: 3rem;
+          margin-top: 1rem;
+          @media @md {margin-top: 1.5rem;}
+        }
+      }
+    }
+    
+    
+    
+  }
+}
+
 
 
 /* Mixins  */
@@ -630,7 +706,7 @@ footer {
 }
 
 .border-bottom(@color, @width: 2px){
-  border-top: @width solid @color;
+  border-bottom: @width solid @color;
   
   /*
   background-image: linear-gradient(transparent @width, @color @width);
