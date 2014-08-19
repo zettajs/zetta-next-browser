@@ -544,11 +544,7 @@ header nav, #wampum {
     table {
       width: 100%;
       td {
-        text-overflow: ellipsis;
-
-        /* Required for text-overflow to do anything */
-        white-space: nowrap;
-        overflow: hidden;
+        .dotdot();
       }
     }
   }
@@ -600,9 +596,7 @@ footer {
         font-size: 4rem;
         line-height: 4rem;
         height: 4rem;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+        .dotdot();
         margin-top: 1rem; 
         span:hover {
            position: absolute;
@@ -617,6 +611,10 @@ footer {
            line-height: 2rem;
         }
        
+      }
+      
+      .name {
+        color: @gray_30;
       }
       
       &.numerical .vis, &.categorical .vis {
@@ -726,5 +724,9 @@ footer {
     padding-left: 1rem; padding-right: 1rem;
     @media @md {padding-left: inherit; padding-right: inherit;}
 }
-
+.dotdot(){
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 

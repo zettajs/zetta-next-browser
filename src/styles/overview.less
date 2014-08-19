@@ -59,9 +59,7 @@
     .value {
       padding: 1rem;
       color: @apigee-gray;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      .dotdot();
       
       text-align: right;
       @media @md { text-align: left; }
@@ -158,6 +156,7 @@ input {
 .device-meta {
   .centered();
   h2.name {
+    .border-box();
     .serverHeading(); text-transform: uppercase; 
     @media @md{padding-left: 1rem;}
   }
@@ -176,6 +175,21 @@ input {
     .border-box();
     
     padding-right: 1rem;
+  }
+  .properties .content {
+    padding: 0 !important;
+   
+    div:not(:first-child) { .border-top(@gray_20, 1px); }
+    div:nth-child(even) { 
+      background-color: @gray_5; 
+    }
+    span {
+      .border-box();
+      padding: .1rem .5rem;
+      font-size: .8rem;
+      .dotdot();
+    }
+    
   }
 }
 
